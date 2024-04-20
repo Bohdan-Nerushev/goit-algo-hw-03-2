@@ -1,15 +1,13 @@
 #   =======№1=======
-#from datetime import datetime
+from datetime import datetime
 
-#def get_days_from_today(date:str) -> int:
-#    try:
- #       return (datetime.strptime(date, "%Y-%m-%d").date() - datetime.now().date()).days
-#    except ValueError:
-#        return ('Некоректний формат вводу !!!')
-#a = input("Введіть дату: ")
-#print(get_days_from_today(a))
-
-
+def get_days_from_today(date:str) -> int:
+    try:
+        return (datetime.strptime(date, "%Y-%m-%d").date() - datetime.now().date()).days
+    except ValueError:
+        return ('Некоректний формат вводу !!!')
+a = input("Введіть дату: ")
+print(get_days_from_today(a))
 
 #   =======№2=======
 import random
@@ -30,22 +28,18 @@ lottery_numbers = get_numbers_ticket(min_zahlen, max_zahlen, count_zahlen)
 print("Ваші лотерейні числа:", lottery_numbers)
 
 #   =======№3=======
-#import re
+import re
 
+def normalize_phone(phone_number):
+    formatted_phone = []
 
-#def normalize_phone(phone_number):
- #   formatted_phone = []
+    pattern = r"[;,\-:!\.()+\\t n]"
+    replacement = r""
+    formatted_phone = ('+' + '38' + re.sub(pattern, replacement, phone_number)[-10:])
+    return formatted_phone10
 
- #   pattern = r"[;,\-:!\.()+\\t n]"
- #   replacement = r""
- #   formatted_phone = ('+' + '38' + re.sub(pattern, replacement, phone_number)[-10:])
- #   return formatted_phone10
-
-
-
-#phone = input('Введіть номер для корекції: ')
-
-#print(normalize_phone(phone))
+phone = input('Введіть номер для корекції: ')
+print(normalize_phone(phone))
 
 #phone = [
 #    "067\\t123 4567",
